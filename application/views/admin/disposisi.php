@@ -10,7 +10,7 @@
                     <button class="btn btn-success" data-toggle="modal" data-target="#tambah_surat_masuk">
                         <i class="fa fa-envelope"></i> Tambah ' . $judul . '
                     </button>&nbsp;&nbsp;
-                    <a href="' . base_url('home/disposisi_selesai/' . $this->uri->segment(3)) . '" class="btn btn-info">
+                    <a href="' . base_url('home/return/' . $this->uri->segment(3)) . '" class="btn btn-info">
                         <i class="fa fa-check"></i> ' . $judul . ' Selesai
                     </a>
                     ';
