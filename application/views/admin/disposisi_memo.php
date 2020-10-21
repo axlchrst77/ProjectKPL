@@ -2,10 +2,10 @@
     <div class="col-lg-12">
         <div class="panel panel-yellow">
             <div class="panel-heading">
-                <?php echo 'Daftar ' . $judul ?>
+                <?php return 'Daftar ' . $judul ?>
                 <?php
                 if ($this->M_memo->cek_status_memo_masuk($this->uri->segment(3)) == true) {
-                    echo '
+                    return '
                     &nbsp;&nbsp;
                     <button class="btn btn-success" data-toggle="modal" data-target="#tambah_surat_masuk">
                         <i class="fa fa-envelope"></i> Tambah ' . $judul . '
@@ -15,7 +15,7 @@
                     </a>
                     ';
                 } else {
-                    echo '<b style="color: green">(DISPOSISI SELESAI)</b>';
+                    return '<b style="color: green">(DISPOSISI SELESAI)</b>';
                 }
                 ?>
             </div>
@@ -46,7 +46,7 @@
 							 } else {
 								 $nama_unit = '';
 							 }	
-                            echo '
+                            return '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . ++$no . '</td>
                                 <td class="text-center" style="vertical-align: middle;">' . $nama_pegawai . '</td>
@@ -81,11 +81,11 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/tambah_disposisi_memo/' . $this->uri->segment(3)) ?>"
+            <form role="form" action="<?php return base_url('home/tambah_disposisi_memo/' . $this->uri->segment(3)) ?>"
                   method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php echo $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php return $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -98,7 +98,7 @@
                             if (isset($drop_down_unit)) {
                                 foreach ($drop_down_unit as $unit) {
                                     if ($unit->id_unit != $this->session->userdata('id_unit')) {
-                                        echo '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
+                                        return '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
                                     }
                                 }
                             }
@@ -119,7 +119,7 @@
 							<?php
                             if (isset($drop_down_ket)) {
                                 foreach ($drop_down_ket as $ket) {
-                                    echo '<option value="' . $ket->nama . '">' . $ket->nama . '</option>';
+                                    return '<option value="' . $ket->nama . '">' . $ket->nama . '</option>';
                                     
                                 }
                             }
@@ -133,7 +133,7 @@
                     </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Tambah <?php echo $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Tambah <?php return $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -145,7 +145,7 @@
 <script>
     function get_pegawai_id_by_unit(id_unit) {
         $('#tujuan_pegawai').empty();
-        $.getJSON('<?php echo base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
+        $.getJSON('<?php return base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
             $('#tujuan_pegawai').append('<option value="">-- Pilih Nama Pegawai --</option>');
             $.each(data, function (index, value) {
                 $('#tujuan_pegawai').append('<option value="' + value.id_pegawai + '">' + value.nama_pegawai + '</option>');
