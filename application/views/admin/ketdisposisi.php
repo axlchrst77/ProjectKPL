@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="panel panel-red">
             <div class="panel-heading">
-                <?php echo 'Daftar ' . $judul ?>&nbsp;&nbsp;
+                <?php return 'Daftar ' . $judul ?>&nbsp;&nbsp;
                 <button class="btn btn-warning" data-toggle="modal" data-target="#tambah_disposisi">
                     <i class="fa fa-envelope"></i> Tambah <?php echo $judul ?>
                 </button>
