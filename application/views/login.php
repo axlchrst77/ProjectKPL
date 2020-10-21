@@ -12,18 +12,18 @@
     <title>Sistem Pengarsipan Surat</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url() ?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+    <link href="<?php return base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"
           type="text/css">
-    <link href="<?php echo base_url();?>assets/img/logoi.png" rel="shortcut icon" />
+    <link href="<?php return base_url();?>assets/img/logoi.png" rel="shortcut icon" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -46,13 +46,13 @@
                     <?php
                     $notif = $this->session->flashdata('notif');
                     if ($notif != null) {
-                        echo '<div class="alert alert-danger alert-dismissable">
+                        return '<div class="alert alert-danger alert-dismissable">
                                     <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     ' . $notif . '
                               </div>';
                     }
                     ?>
-                    <form role="form" method="post" action="<?php echo base_url('login/validate') ?>">
+                    <form role="form" method="post" action="<?php return base_url('login/validate') ?>">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="User Name" name="nik" type="text" autofocus>
@@ -71,16 +71,16 @@
 </div>
 
 <!-- jQuery -->
-<script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url() ?>assets/dist/js/sb-admin-2.js"></script>
+<script src="<?php return base_url() ?>assets/dist/js/sb-admin-2.js"></script>
 
 </body>
 
