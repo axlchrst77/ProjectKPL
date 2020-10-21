@@ -1,22 +1,8 @@
 <div class="row">
     <div class="col-lg-12">
-        <div class="panel panel-red">
+        <div class="panel panel-green">
             <div class="panel-heading">
-                <?php echo 'Daftar ' . $judul ?>
-                <?php
-                if ($this->uri->segment(3) == null) {
-
-                } else if ($this->HomeModel->cek_status_memo_masuk($this->uri->segment(3)) == true) {
-                    echo '
-                    &nbsp;&nbsp;
-                    <button class="btn btn-success" data-toggle="modal" data-target="#tambah_surat_masuk">
-                        <i class="fa fa-envelope"></i> Tambah ' . $judul . '
-                    </button>&nbsp;&nbsp;
-                    ';
-                } else {
-                    echo '<b style="color: white">(DISPOSISI SELESAI)</b>';
-                }
-                ?>
+                <?php return 'Daftar ' . $judul ?>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -24,8 +10,8 @@
                     <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Tujuan Divisi</th>
-                        <th>Tujuan Pegawai</th>
+                        <th>Divisi Pengirim</th>
+                        <th>Nama Pengirim</th>
                         <th>Tanggal Disposisi</th>
                         <th>Keterangan</th>
 						<th>Catatan</th>
@@ -34,20 +20,30 @@
                     </thead>
                     <tbody>
                     <?php
-                    if (isset($data_disposisi_keluar)) {
+                    if (isset($data_disposisi_masuk)) {
                         $no = 0;
-                        foreach ($data_disposisi_keluar as $disposisi_keluar) {
-                            echo '
+                        foreach ($data_disposisi_masuk as $disposisi_masuk) {
+							 $data_pegawai = $this->db->join('unit', 'unit.id_unit = pegawai.id_unit')
+									->where('id_pegawai', $disposisi_masuk->id_pegawai_pengirim)									
+									->get('pegawai')->row();
+							 if($data_pegawai){
+								 $nama_unit = $data_pegawai->nama_unit;
+							 } else {
+								 $nama_unit = '';
+							 }	
+                            return '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . ++$no . '</td>
-                                <td class="text-center" style="vertical-align: middle;">' . $disposisi_keluar->nama_unit . '</td>
-                                <td class="text-center" style="vertical-align: middle;">' . $disposisi_keluar->nama_pegawai . '</td>
-                                <td class="text-center" style="vertical-align: middle;">' . date('d-m-Y H:i:s',strtotime($disposisi_keluar->tgl_disposisi)) . '</td>
-                                <td class="text-center" style="vertical-align: middle;">' . $disposisi_keluar->keterangan . '</td>
-								<td class="text-center" style="vertical-align: middle;">' . $disposisi_keluar->catatan . '</td>
-                                <td class="text-center" style="vertical-align: middle;">
-                                    <a href="' . base_url('/uploads/' . $disposisi_keluar->file_memo) . '" class="btn btn-sm btn-success" style="width: 100%">Lihat Surat</a><br>
-                                    <a href="' . base_url('home/hapus_disposisi_memo_pegawai/' . $disposisi_keluar->id_disposisi . '/' . $disposisi_keluar->id_memo) . '" class="btn btn-sm btn-info" style="width: 100%; margin-top: 5%">Hapus</a>
+                                <td class="text-center" style="vertical-align: middle;">' . $nama_unit . '</td>
+                                <td class="text-center" style="vertical-align: middle;">' . $disposisi_masuk->nama_pegawai . '</td>
+                                <td class="text-center" style="vertical-align: middle;">' . date('d-m-Y H:i:s',strtotime($disposisi_masuk->tgl_disposisi)) . '</td>
+                                <td class="text-center" style="vertical-align: middle;">' . $disposisi_masuk->keterangan . '</td>
+                                <td class="text-center" style="vertical-align: middle;">' . $disposisi_masuk->catatan . '</td>
+								<td class="text-center" style="vertical-align: middle;">
+                                    <a href="' . base_url('/uploads/' . $disposisi_masuk->file_memo) . '" class="btn btn-sm btn-success" target="_blank" style="width: 100%">Lihat Surat</a><br>
+                                    <a href="' . base_url('home/disposisi_memo/' . $disposisi_masuk->id_memo) . '" class="btn btn-sm btn-info" style="width: 100%; margin-top: 5%">Tambah Disposisi</a><br>
+									</br>
+									<a href="' . base_url('home/cetak_disposisi_memo/' . $disposisi_masuk->id_disposisi) . '" class="btn btn-sm btn-danger" target="_blank" style="width: 100%">Lihat Disposisi</a>
                                 </td>
                             </tr>
                             ';
@@ -70,26 +66,23 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/tambah_disposisi_pegawai/' . $this->uri->segment(3)) ?>"
+            <form role="form" action="<?php return base_url('home/tambah_disposisi/' . $this->uri->segment(3)) ?>"
                   method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php echo $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php return $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Tujuan Divisi</label>
+                        <label>Tujuan Unit</label>
                         <select class="form-control" name="tujuan_unit"
                                 onchange="get_pegawai_id_by_unit(this.value)">
-                            <option value="">-- Pilih Tujuan Divisi --</option>
+                            <option value="">-- Pilih Tujuan Unit --</option>
                             <?php
                             if (isset($drop_down_unit)) {
                                 foreach ($drop_down_unit as $unit) {
-                                    if ($unit->id_unit != $this->session->userdata('id_unit') )
-										//&&
-                                        //$unit->level >= $this->session->userdata('id_unit')) 
-										{
-                                        echo '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
+                                    if ($unit->id_unit != $this->session->userdata('id_unit')) {
+                                        return '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
                                     }
                                 }
                             }
@@ -109,7 +102,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Tambah <?php echo $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Tambah <?php return $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -117,10 +110,11 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
 <script>
     function get_pegawai_id_by_unit(id_unit) {
         $('#tujuan_pegawai').empty();
-        $.getJSON('<?php echo base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
+        $.getJSON('<?php return base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
             $('#tujuan_pegawai').append('<option value="">-- Pilih Nama Pegawai --</option>');
             $.each(data, function (index, value) {
                 $('#tujuan_pegawai').append('<option value="' + value.id_pegawai + '">' + value.nama_pegawai + '</option>');
