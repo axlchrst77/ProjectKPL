@@ -7,12 +7,12 @@
                         <i class="fa fa-envelope fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge"><?php echo $jumlah_surat['surat_masuk'] ?></div>
+                        <div class="huge"><?php return $jumlah_surat['surat_masuk'] ?></div>
                         <div>Surat Masuk</div>
                     </div>
                 </div>
             </div>
-            <a href="<?php echo base_url('home/surat_masuk') ?>">
+            <a href="<?php return base_url('home/surat_masuk') ?>">
                 <div class="panel-footer">
                     <span class="pull-left">Daftar Surat Masuk</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -29,12 +29,12 @@
                         <i class="fa fa-envelope fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge"><?php echo $jumlah_surat['surat_keluar'] ?></div>
+                        <div class="huge"><?php return $jumlah_surat['surat_keluar'] ?></div>
                         <div>Surat Keluar</div>
                     </div>
                 </div>
             </div>
-            <a href="<?php echo base_url('home/surat_keluar') ?>">
+            <a href="<?php return base_url('home/surat_keluar') ?>">
                 <div class="panel-footer">
                     <span class="pull-left">Daftar Surat Keluar</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -51,12 +51,12 @@
                         <i class="fa fa-envelope fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge"><?php echo $jumlah_memo['memo_masuk'] ?></div>
+                        <div class="huge"><?php return $jumlah_memo['memo_masuk'] ?></div>
                         <div>Memo Masuk</div>
                     </div>
                 </div>
             </div>
-            <a href="<?php echo base_url('home/memo_masuk') ?>">
+            <a href="<?php return base_url('home/memo_masuk') ?>">
                 <div class="panel-footer">
                     <span class="pull-left">Daftar Memo Masuk</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -73,12 +73,12 @@
                         <i class="fa fa-envelope fa-5x"></i>
                     </div>
                     <div class="col-xs-9 text-right">
-                        <div class="huge"><?php echo $jumlah_memo['memo_keluar'] ?></div>
+                        <div class="huge"><?php return $jumlah_memo['memo_keluar'] ?></div>
                         <div>Memo Keluar</div>
                     </div>
                 </div>
             </div>
-            <a href="<?php echo base_url('home/memo_keluar') ?>">
+            <a href="<?php return base_url('home/memo_keluar') ?>">
                 <div class="panel-footer">
                     <span class="pull-left">Daftar Memo Keluar</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
