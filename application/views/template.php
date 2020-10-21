@@ -12,30 +12,30 @@
     <title>Sistem Pengarsipan Surat</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url() ?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
     <!-- DataTable Button CSS -->
-    <link href="<?php echo base_url() ?>assets/vendor/datatables/css/buttons.dataTables.min.css" rel="stylesheet">
+    <link href="<?php return base_url() ?>assets/vendor/datatables/css/buttons.dataTables.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+    <link href="<?php return base_url() ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"
           type="text/css">
-	<link href="<?php echo base_url();?>assets/img/logoi.png" rel="shortcut icon" />	  
+	<link href="<?php return base_url();?>assets/img/logoi.png" rel="shortcut icon" />	  
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,19 +59,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url('Home') ?>">Sistem Pengarsipan Surat
-                (<?php echo $this->session->userdata('nama_unit') ?>)</a>
+            <a class="navbar-brand" href="<?php return base_url('Home') ?>">Sistem Pengarsipan Surat
+                (<?php return $this->session->userdata('nama_unit') ?>)</a>
         </div>
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <?php echo $this->session->userdata('nama_pegawai'); ?> <i
+                    <i class="fa fa-user fa-fw"></i> <?php return $this->session->userdata('nama_pegawai'); ?> <i
                             class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="<?php echo base_url('login/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="<?php return base_url('login/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -85,7 +85,7 @@
                 <ul class="nav" id="side-menu">
                     <?php
                     if ($this->session->userdata('level') == '1') {
-                        echo '
+                        return '
                         <li>
                             <a href="' . base_url('home') . '"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -109,7 +109,7 @@
                         </li>
                         ';
                     } else {
-                        echo '
+                        return '
                         <li>
                             <a href="' . base_url('home') . '"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -139,9 +139,9 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><?php echo $judul;
+                <h1 class="page-header"><?php return $judul;
                     if (isset($data_surat->nomor_surat))
-                        echo ' Nomor ' . $data_surat->nomor_surat
+                        return ' Nomor ' . $data_surat->nomor_surat
                     ?></h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -150,7 +150,7 @@
         <?php
         $notif = $this->session->flashdata('notif');
         if ($notif != null) {
-            echo '
+            return '
             <div class="row">
                 <div class="col-lg-12">
                     <div class="alert alert-info alert-dismissable">
@@ -170,33 +170,33 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="<?php echo base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="<?php echo base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- Morris Charts JavaScript -->
-<script src="<?php echo base_url() ?>assets/vendor/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/morrisjs/morris.min.js"></script>
-<script src="<?php echo base_url() ?>assets/data/morris-data.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/raphael/raphael.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/morrisjs/morris.min.js"></script>
+<script src="<?php return base_url() ?>assets/data/morris-data.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="<?php echo base_url() ?>assets/dist/js/sb-admin-2.js"></script>
+<script src="<?php return base_url() ?>assets/dist/js/sb-admin-2.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables-responsive/dataTables.responsive.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/buttons.flash.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/jszip.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/pdfmake.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/vfs_fonts.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/buttons.html5.min.js"></script>
-<script src="<?php echo base_url() ?>assets/vendor/datatables/js/buttons.print.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables-responsive/dataTables.responsive.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/dataTables.buttons.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/buttons.flash.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/jszip.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/pdfmake.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/vfs_fonts.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/buttons.html5.min.js"></script>
+<script src="<?php return base_url() ?>assets/vendor/datatables/js/buttons.print.min.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
