@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="panel panel-red">
             <div class="panel-heading">
-                <?php echo 'Daftar Unit ' ?>&nbsp;&nbsp;
+                <?php return 'Daftar Unit ' ?>&nbsp;&nbsp;
                 <button class="btn btn-warning" data-toggle="modal" data-target="#tambah_user">
                     <i class="fa fa-envelope"></i> Tambah Unit
                 </button>
@@ -22,7 +22,7 @@
 					$level = array('','Admin','User');
                     if (isset($data_unit)) {
                         foreach ($data_unit as $unit) {
-                            echo '
+                            return '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . $unit->nama_unit . '</td>
                                 <td class="text-center" style="vertical-align: middle;">' . $level[$unit->level] . '</td>
@@ -51,7 +51,7 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/tambah_unit') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/tambah_unit') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -93,7 +93,7 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/ubah_unit') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/ubah_unit') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -137,7 +137,7 @@
         $('#ubah_id_unit').empty();
 		$('#ubah_nama').empty();
         
-        $.getJSON('<?php echo base_url('home/get_unit_by_id/')?>' + id_unit, function (data) {
+        $.getJSON('<?php return base_url('home/get_unit_by_id/')?>' + id_unit, function (data) {
             $('#ubah_id_unit').val(data.id_unit);
 			$('#ubah_nama').val(data.nama_unit);
             $('#ubah_level').val(data.level);
