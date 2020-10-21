@@ -2,19 +2,19 @@
     <div class="col-lg-12">
         <div class="panel panel-red">
             <div class="panel-heading">
-                <?php echo 'Daftar ' . $judul ?>
+                <?php return 'Daftar ' . $judul ?>
                 <?php
                 if ($this->uri->segment(3) == null) {
 
                 } else if ($this->HomeModel->cek_status_surat_masuk($this->uri->segment(3)) == true) {
-                    echo '
+                    return '
                     &nbsp;&nbsp;
                     <button class="btn btn-success" data-toggle="modal" data-target="#tambah_surat_masuk">
                         <i class="fa fa-envelope"></i> Tambah ' . $judul . '
                     </button>&nbsp;&nbsp;
                     ';
                 } else {
-                    echo '<b style="color: white">(DISPOSISI SELESAI)</b>';
+                    return '<b style="color: white">(DISPOSISI SELESAI)</b>';
                 }
                 ?>
             </div>
@@ -37,7 +37,7 @@
                     if (isset($data_disposisi_keluar)) {
                         $no = 0;
                         foreach ($data_disposisi_keluar as $disposisi_keluar) {
-                            echo '
+                            return '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . ++$no . '</td>
                                 <td class="text-center" style="vertical-align: middle;">' . $disposisi_keluar->nama_unit . '</td>
@@ -70,11 +70,11 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/tambah_disposisi_pegawai/' . $this->uri->segment(3)) ?>"
+            <form role="form" action="<?php return base_url('home/tambah_disposisi_pegawai/' . $this->uri->segment(3)) ?>"
                   method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php echo $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php return $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -87,7 +87,7 @@
                                 foreach ($drop_down_unit as $unit) {
                                     if ($unit->id_unit != $this->session->userdata('id_unit') &&
                                         $unit->level > $this->session->userdata('id_unit')) {
-                                        echo '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
+                                        return '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
                                     }
                                 }
                             }
@@ -107,7 +107,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Tambah <?php echo $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Tambah <?php return $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -118,7 +118,7 @@
 <script>
     function get_pegawai_id_by_unit(id_unit) {
         $('#tujuan_pegawai').empty();
-        $.getJSON('<?php echo base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
+        $.getJSON('<?php return base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
             $('#tujuan_pegawai').append('<option value="">-- Pilih Nama Pegawai --</option>');
             $.each(data, function (index, value) {
                 $('#tujuan_pegawai').append('<option value="' + value.id_pegawai + '">' + value.nama_pegawai + '</option>');
