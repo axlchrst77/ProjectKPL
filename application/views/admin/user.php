@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="panel panel-red">
             <div class="panel-heading">
-                <?php echo 'Daftar User'  ?>&nbsp;&nbsp;
+                <?php return 'Daftar User'  ?>&nbsp;&nbsp;
                 <button class="btn btn-warning" data-toggle="modal" data-target="#tambah_user">
                     <i class="fa fa-envelope"></i> Tambah User
                 </button>
@@ -23,7 +23,7 @@
                     <?php
                     if (isset($data_user)) {
                         foreach ($data_user as $user) {
-                            echo '
+                            return '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . $user->username . '</td>
 								 <td class="text-center" style="vertical-align: middle;">' . $user->nip . '</td>
@@ -54,7 +54,7 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/tambah_user') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/tambah_user') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -82,7 +82,7 @@
                             if (isset($drop_down_unit)) {
                                 foreach ($drop_down_unit as $unit) {
                                     //if ($unit->id_unit != $this->session->userdata('id_unit')) {
-                                        echo '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
+                                        return '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
                                     //}
                                 }
                             }
@@ -113,7 +113,7 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/ubah_user') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/ubah_user') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -142,7 +142,7 @@
                             if (isset($drop_down_unit)) {
                                 foreach ($drop_down_unit as $unit) {
                                     //if ($unit->id_unit != $this->session->userdata('id_unit')) {
-                                        echo '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
+                                        return '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
                                     //}
                                 }
                             }
@@ -177,7 +177,7 @@
         //$('#ubah_unit').empty();
         $('#ubah_password').empty();
         
-        $.getJSON('<?php echo base_url('home/get_user_by_id/')?>' + id_user, function (data) {
+        $.getJSON('<?php return base_url('home/get_user_by_id/')?>' + id_user, function (data) {
             $('#ubah_id_user').val(data.id_pegawai);
 			$('#ubah_nik').val(data.username);
 			$('#ubah_nip').val(data.nip);
