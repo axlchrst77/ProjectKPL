@@ -8,9 +8,9 @@ h1 {
 
 h2 {
   font: bold 95% Arial, sans-serif;
-	color: #900000;
-	margin-top: 1.5em;
-	margin-bottom: 1em;
+  color: #900000;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 dl.param dt { text-decoration: underline; }
