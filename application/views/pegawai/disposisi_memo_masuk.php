@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <div class="panel panel-green">
             <div class="panel-heading">
-                <?php return 'Daftar ' . $judul ?>
+                <?php echo 'Daftar ' . $judul ?>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -31,7 +31,7 @@
 							 } else {
 								 $nama_unit = '';
 							 }	
-                            return '
+                            echo '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . ++$no . '</td>
                                 <td class="text-center" style="vertical-align: middle;">' . $nama_unit . '</td>
@@ -66,11 +66,11 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php return base_url('home/tambah_disposisi/' . $this->uri->segment(3)) ?>"
+            <form role="form" action="<?php echo base_url('home/tambah_disposisi/' . $this->uri->segment(3)) ?>"
                   method="post">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php return $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php echo $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -82,7 +82,7 @@
                             if (isset($drop_down_unit)) {
                                 foreach ($drop_down_unit as $unit) {
                                     if ($unit->id_unit != $this->session->userdata('id_unit')) {
-                                        return '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
+                                        echo '<option value="' . $unit->id_unit . '">' . $unit->nama_unit . '</option>';
                                     }
                                 }
                             }
@@ -102,7 +102,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Tambah <?php return $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Tambah <?php echo $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -114,7 +114,7 @@
 <script>
     function get_pegawai_id_by_unit(id_unit) {
         $('#tujuan_pegawai').empty();
-        $.getJSON('<?php return base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
+        $.getJSON('<?php echo base_url('home/get_pegawai_by_unit/')?>' + id_unit, function (data) {
             $('#tujuan_pegawai').append('<option value="">-- Pilih Nama Pegawai --</option>');
             $.each(data, function (index, value) {
                 $('#tujuan_pegawai').append('<option value="' + value.id_pegawai + '">' + value.nama_pegawai + '</option>');
