@@ -2,9 +2,9 @@
     <div class="col-lg-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <?php echo 'Daftar ' . $judul ?>&nbsp;&nbsp;
+                <?php return 'Daftar ' . $judul ?>&nbsp;&nbsp;
                 <button class="btn btn-info" data-toggle="modal" data-target="#tambah_memo_masuk">
-                    <i class="fa fa-envelope"></i> Tambah <?php echo $judul ?>
+                    <i class="fa fa-envelope"></i> Tambah <?php return $judul ?>
                 </button>
             </div>
             <!-- /.panel-heading -->
@@ -25,7 +25,7 @@
                     <?php
                     if (isset($data_memo_masuk)) {
                         foreach ($data_memo_masuk as $memo_masuk) {
-                            echo '
+                            return '
                             <tr>
                                 <td class="text-center" style="vertical-align: middle;">' . $memo_masuk->nomor_memo . '</td>
                                 <td class="text-center" style="vertical-align: middle;">' . date('d-m-Y',strtotime($memo_masuk->tgl_kirim)) . '</td>
@@ -61,11 +61,11 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/tambah_memo_masuk') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/tambah_memo_masuk') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php echo $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Tambah <?php return $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Tambah <?php echo $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Tambah <?php return $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -112,11 +112,11 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/ubah_memo_masuk') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/ubah_memo_masuk') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Ubah <?php echo $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Ubah <?php return $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <input type="hidden" name="ubah_id_memo" id="ubah_id_memo">
@@ -148,7 +148,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Ubah <?php echo $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Ubah <?php return $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -161,11 +161,11 @@
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form role="form" action="<?php echo base_url('home/ubah_file_memo_masuk') ?>" method="post"
+            <form role="form" action="<?php return base_url('home/ubah_file_memo_masuk') ?>" method="post"
                   enctype="multipart/form-data">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title text-center" id="myModalLabel">Ubah File <?php echo $judul ?></h4>
+                    <h4 class="modal-title text-center" id="myModalLabel">Ubah File <?php return $judul ?></h4>
                 </div>
                 <div class="modal-body">
                     <input type="hidden" name="ubah_file_memo" id="ubah_file_memo">
@@ -177,7 +177,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Tutup</button>
-                    <input type="submit" value="Ubah File <?php echo $judul ?>" name="submit" class="btn btn-success">
+                    <input type="submit" value="Ubah File <?php return $judul ?>" name="submit" class="btn btn-success">
                 </div>
             </form>
         </div>
@@ -197,7 +197,7 @@
         $('#ubah_perihal').empty();
         $('#ubah_file_memo').empty();
 
-        $.getJSON('<?php echo base_url('home/get_memo_masuk_by_id/')?>' + id_memo, function (data) {
+        $.getJSON('<?php return base_url('home/get_memo_masuk_by_id/')?>' + id_memo, function (data) {
             $('#ubah_id_memo').val(data.id_memo);
             $('#ubah_nomor_memo').val(data.nomor_memo);
             $('#ubah_tgl_kirim').val(data.tgl_kirim);
