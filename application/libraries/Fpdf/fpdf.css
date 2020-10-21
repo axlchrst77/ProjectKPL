@@ -59,9 +59,25 @@ div.doc-source {
   margin-bottom: 1.3em;
 }
 
-div.doc-source pre { display: table; width: 100%; margin: 0em; font-family: inherit; font-size: 100%; }
-div.doc-source code { display: block; background-color: #e0e0e0; padding: 4px; }
-.kw { color: #000080; font-weight: bold; }
+div.doc-source pre {
+  display: table;
+  width: 100%;
+  margin: 0em;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+div.doc-source code {
+  display: block;
+  background-color: #e0e0e0;
+  padding: 4px;
+}
+
+.kw {
+  color: #000080;
+  font-weight: bold;
+}
+
 .str { color: #c00; }
 .cmt { color: #008000; }
 
@@ -69,14 +85,15 @@ p.demo {
   text-align: center;
   margin-top: -0.9em;
 }
+
 a.demo {
-  text-decoration:n one;
+  text-decoration: n one;
   font-weight: bold;
   color: #00c;
 }
 
 a.demo:link {
-	text-decoration: none;
+  text-decoration: none;
   font-weight: bold;
   color: #00c;
 }
