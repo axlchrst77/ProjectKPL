@@ -40,7 +40,7 @@ div.source {
 div.source pre {
   display: table;
   border: 1px solid #24246a;
-  width: 100%; 
+  width: 100%;
   margin: 0;
   font-family: inherit;
   font-size: 100%;
@@ -62,7 +62,7 @@ div.doc-source {
 div.doc-source pre {
   display: table;
   width: 100%;
-  margin: 0em;
+  margin: 0;
   font-family: inherit;
   font-size: 100%;
 }
