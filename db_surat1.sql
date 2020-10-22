@@ -19,32 +19,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_surat1`
+-- Database: 'db_surat1'
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `disposisi`
+-- Struktur dari tabel 'disposisi'
 --
 
-CREATE TABLE `disposisi` (
-  `id_disposisi` int(11) NOT NULL,
-  `id_surat` int(11) NOT NULL,
-  `id_pegawai_pengirim` int(11) NOT NULL,
-  `id_pegawai_penerima` int(11) NOT NULL,
-  `id_jabatan_pengirim` int(11) NOT NULL,
-  `tgl_disposisi` timestamp NOT NULL DEFAULT current_timestamp(),
-  `keterangan` text NOT NULL,
-  `catatan` varchar(1000) NOT NULL,
-  `file_disposisi` text NOT NULL
+CREATE TABLE 'disposisi' (
+  'id_disposisi' int(11) NOT NULL,
+  'id_surat' int(11) NOT NULL,
+  'id_pegawai_pengirim' int(11) NOT NULL,
+  'id_pegawai_penerima' int(11) NOT NULL,
+  'id_jabatan_pengirim' int(11) NOT NULL,
+  'tgl_disposisi' timestamp NOT NULL DEFAULT current_timestamp(),
+  'keterangan' text NOT NULL,
+  'catatan' varchar(1000) NOT NULL,
+  'file_disposisi' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `disposisi`
+-- Dumping data untuk tabel 'disposisi'
 --
 
-INSERT INTO `disposisi` (`id_disposisi`, `id_surat`, `id_pegawai_pengirim`, `id_pegawai_penerima`, `id_jabatan_pengirim`, `tgl_disposisi`, `keterangan`, `catatan`, `file_disposisi`) VALUES
+INSERT INTO 'disposisi' ('id_disposisi', 'id_surat', 'id_pegawai_pengirim', 'id_pegawai_penerima', 'id_jabatan_pengirim', 'tgl_disposisi', 'keterangan', 'catatan', 'file_disposisi') VALUES
 (45, 7, 2, 1, 9, '2020-02-12 04:19:52', 'Sekretaris', 'wq', ''),
 (46, 7, 2, 4, 9, '2020-02-12 04:20:08', 'Forward Ke', 's', ''),
 (47, 7, 2, 7, 9, '2020-02-12 04:20:36', 'Seluruh Pegawai', 'a', ''),
@@ -53,46 +53,46 @@ INSERT INTO `disposisi` (`id_disposisi`, `id_surat`, `id_pegawai_pengirim`, `id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `disposisi_memo`
+-- Struktur dari tabel 'disposisi_memo'
 --
 
-CREATE TABLE `disposisi_memo` (
-  `id_disposisi` int(11) NOT NULL,
-  `id_memo` int(11) NOT NULL,
-  `id_pegawai_pengirim` int(11) NOT NULL,
-  `id_pegawai_penerima` int(11) NOT NULL,
-  `id_jabatan_pengirim` int(11) NOT NULL,
-  `tgl_disposisi` timestamp NOT NULL DEFAULT current_timestamp(),
-  `keterangan` text NOT NULL,
-  `catatan` varchar(1000) NOT NULL,
-  `file_disposisi` text NOT NULL
+CREATE TABLE 'disposisi_memo' (
+  'id_disposisi' int(11) NOT NULL,
+  'id_memo' int(11) NOT NULL,
+  'id_pegawai_pengirim' int(11) NOT NULL,
+  'id_pegawai_penerima' int(11) NOT NULL,
+  'id_jabatan_pengirim' int(11) NOT NULL,
+  'tgl_disposisi' timestamp NOT NULL DEFAULT current_timestamp(),
+  'keterangan' text NOT NULL,
+  'catatan' varchar(1000) NOT NULL,
+  'file_disposisi' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data untuk tabel `disposisi_memo`
+-- Dumping data untuk tabel 'disposisi_memo'
 --
 
-INSERT INTO `disposisi_memo` (`id_disposisi`, `id_memo`, `id_pegawai_pengirim`, `id_pegawai_penerima`, `id_jabatan_pengirim`, `tgl_disposisi`, `keterangan`, `catatan`, `file_disposisi`) VALUES
+INSERT INTO 'disposisi_memo' ('id_disposisi', 'id_memo', 'id_pegawai_pengirim', 'id_pegawai_penerima', 'id_jabatan_pengirim', 'tgl_disposisi', 'keterangan', 'catatan', 'file_disposisi') VALUES
 (16, 10, 2, 1, 9, '2020-02-12 04:24:24', 'Edarkan', 'sad', ''),
 (17, 10, 1, 7, 1000, '2020-02-12 04:26:51', 'U/ Dilaksanakan', 'sad', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan`
+-- Struktur dari tabel 'jabatan'
 --
 
-CREATE TABLE `jabatan` (
-  `id_jabatan` int(11) NOT NULL,
-  `nama_jabatan` varchar(100) NOT NULL,
-  `level` int(11) NOT NULL
+CREATE TABLE 'jabatan' (
+  'id_jabatan' int(11) NOT NULL,
+  'nama_jabatan' varchar(100) NOT NULL,
+  'level' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatan`
+-- Dumping data untuk tabel 'jabatan'
 --
 
-INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `level`) VALUES
+INSERT INTO 'jabatan' ('id_jabatan', 'nama_jabatan', 'level') VALUES
 (9, 'Sekretaris', 1),
 (1000, ' Branch Manager', 2),
 (1100, 'Deputy Branch Manager', 2),
@@ -114,19 +114,19 @@ INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ket_disposisi`
+-- Struktur dari tabel 'ket_disposisi'
 --
 
-CREATE TABLE `ket_disposisi` (
-  `id` int(10) NOT NULL,
-  `nama` varchar(50) DEFAULT NULL
+CREATE TABLE 'ket_disposisi' (
+  'id' int(10) NOT NULL,
+  'nama' varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ket_disposisi`
+-- Dumping data untuk tabel 'ket_disposisi'
 --
 
-INSERT INTO `ket_disposisi` (`id`, `nama`) VALUES
+INSERT INTO 'ket_disposisi' ('id', 'nama') VALUES
 (1, 'Teliti'),
 (2, 'Edarkan'),
 (4, 'Ajukan Pendapat'),
@@ -149,70 +149,70 @@ INSERT INTO `ket_disposisi` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `memo_keluar`
+-- Struktur dari tabel 'memo_keluar'
 --
 
-CREATE TABLE `memo_keluar` (
-  `id_memo` int(11) NOT NULL,
-  `nomor_memo` varchar(200) NOT NULL,
-  `tgl_kirim` date NOT NULL,
-  `tujuan` varchar(200) NOT NULL,
-  `perihal` varchar(200) NOT NULL,
-  `file_memo` text NOT NULL
+CREATE TABLE 'memo_keluar' (
+  'id_memo' int(11) NOT NULL,
+  'nomor_memo' varchar(200) NOT NULL,
+  'tgl_kirim' date NOT NULL,
+  'tujuan' varchar(200) NOT NULL,
+  'perihal' varchar(200) NOT NULL,
+  'file_memo' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `memo_keluar`
+-- Dumping data untuk tabel 'memo_keluar'
 --
 
-INSERT INTO `memo_keluar` (`id_memo`, `nomor_memo`, `tgl_kirim`, `tujuan`, `perihal`, `file_memo`) VALUES
+INSERT INTO 'memo_keluar' ('id_memo', 'nomor_memo', 'tgl_kirim', 'tujuan', 'perihal', 'file_memo') VALUES
 (9, '1119/M/Mgl.III/BCFU/XI/2019', '2019-11-28', 'BTN Kantor Wilayah 6', 'Permohonan Ijin Prinsip Spesial Rate Deposito', '1119_permohonan_ijin_prinsip_Spesial_Rate_Deposito.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `memo_masuk`
+-- Struktur dari tabel 'memo_masuk'
 --
 
-CREATE TABLE `memo_masuk` (
-  `id_memo` int(11) NOT NULL,
-  `nomor_memo` varchar(200) NOT NULL,
-  `tgl_kirim` date NOT NULL,
-  `tgl_terima` date NOT NULL,
-  `pengirim` varchar(200) NOT NULL,
-  `penerima` varchar(200) NOT NULL,
-  `perihal` varchar(200) NOT NULL,
-  `file_memo` text NOT NULL,
-  `status` enum('proses','selesai') NOT NULL DEFAULT 'proses'
+CREATE TABLE 'memo_masuk' (
+  'id_memo' int(11) NOT NULL,
+  'nomor_memo' varchar(200) NOT NULL,
+  'tgl_kirim' date NOT NULL,
+  'tgl_terima' date NOT NULL,
+  'pengirim' varchar(200) NOT NULL,
+  'penerima' varchar(200) NOT NULL,
+  'perihal' varchar(200) NOT NULL,
+  'file_memo' text NOT NULL,
+  'status' enum('proses','selesai') NOT NULL DEFAULT 'proses'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `memo_masuk`
+-- Dumping data untuk tabel 'memo_masuk'
 --
 
-INSERT INTO `memo_masuk` (`id_memo`, `nomor_memo`, `tgl_kirim`, `tgl_terima`, `pengirim`, `penerima`, `perihal`, `file_memo`, `status`) VALUES
+INSERT INTO 'memo_masuk' ('id_memo', 'nomor_memo', 'tgl_kirim', 'tgl_terima', 'pengirim', 'penerima', 'perihal', 'file_memo', 'status') VALUES
 (10, '10/M/OBSD/CC/II/2020', '2020-02-05', '2020-02-05', 'OBSD', 'Sekretaris', 'Pemberitahuan', '20200206_OBSD_10_M_OBSD_CC_II_2020_--_Monitoring_GL_Kas_Dalam_Perjalanan_ATM_Vendor_Januari_202021.pdf', 'proses');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pegawai`
+-- Struktur dari tabel 'pegawai'
 --
 
-CREATE TABLE `pegawai` (
-  `id_pegawai` int(11) NOT NULL,
-  `nik` int(11) NOT NULL,
-  `nama_pegawai` varchar(200) NOT NULL,
-  `id_jabatan` int(11) NOT NULL,
-  `password` text NOT NULL,
-  `username` varchar(50) NOT NULL
+CREATE TABLE 'pegawai' (
+  'id_pegawai' int(11) NOT NULL,
+  'nik' int(11) NOT NULL,
+  'nama_pegawai' varchar(200) NOT NULL,
+  'id_jabatan' int(11) NOT NULL,
+  'password' text NOT NULL,
+  'username' varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pegawai`
+-- Dumping data untuk tabel 'pegawai'
 --
 
-INSERT INTO `pegawai` (`id_pegawai`, `nik`, `nama_pegawai`, `id_jabatan`, `password`, `username`) VALUES
+INSERT INTO 'pegawai' ('id_pegawai', 'nik', 'nama_pegawai', 'id_jabatan', 'password', 'username') VALUES
 (1, 111, 'Kepala Cabang', 1000, '21232f297a57a5a743894a0e4a801fc3', 'kepalacabang'),
 (2, 999, 'Sekretaris', 9, '21232f297a57a5a743894a0e4a801fc3', 'sekretaris'),
 (4, 0, 'Bima', 1110, '21232f297a57a5a743894a0e4a801fc3', 'bima'),
@@ -224,48 +224,48 @@ INSERT INTO `pegawai` (`id_pegawai`, `nik`, `nama_pegawai`, `id_jabatan`, `passw
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_keluar`
+-- Struktur dari tabel 'surat_keluar'
 --
 
-CREATE TABLE `surat_keluar` (
-  `id_surat` int(11) NOT NULL,
-  `nomor_surat` varchar(200) NOT NULL,
-  `tgl_kirim` date NOT NULL,
-  `tujuan` varchar(200) NOT NULL,
-  `perihal` varchar(200) NOT NULL,
-  `file_surat` text NOT NULL
+CREATE TABLE 'surat_keluar' (
+  'id_surat' int(11) NOT NULL,
+  'nomor_surat' varchar(200) NOT NULL,
+  'tgl_kirim' date NOT NULL,
+  'tujuan' varchar(200) NOT NULL,
+  'perihal' varchar(200) NOT NULL,
+  'file_surat' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `surat_keluar`
+-- Dumping data untuk tabel 'surat_keluar'
 --
 
-INSERT INTO `surat_keluar` (`id_surat`, `nomor_surat`, `tgl_kirim`, `tujuan`, `perihal`, `file_surat`) VALUES
+INSERT INTO 'surat_keluar' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tujuan', 'perihal', 'file_surat') VALUES
 (8, '64/S/Mgl.III/CMFU/XI2019', '2019-11-13', 'KSP Bakti Usaha Sejahtera', 'Penawaran Program Gebyar Giro BTN 2019', '64_penawaran_program_gebyar_giro_BTN_2019.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat_masuk`
+-- Struktur dari tabel 'surat_masuk'
 --
 
-CREATE TABLE `surat_masuk` (
-  `id_surat` int(11) NOT NULL,
-  `nomor_surat` varchar(200) NOT NULL,
-  `tgl_kirim` date NOT NULL,
-  `tgl_terima` date NOT NULL,
-  `pengirim` varchar(200) NOT NULL,
-  `penerima` varchar(200) NOT NULL,
-  `perihal` varchar(200) NOT NULL,
-  `file_surat` text NOT NULL,
-  `status` enum('proses','selesai') NOT NULL DEFAULT 'proses'
+CREATE TABLE 'surat_masuk' (
+  'id_surat' int(11) NOT NULL,
+  'nomor_surat' varchar(200) NOT NULL,
+  'tgl_kirim' date NOT NULL,
+  'tgl_terima' date NOT NULL,
+  'pengirim' varchar(200) NOT NULL,
+  'penerima' varchar(200) NOT NULL,
+  'perihal' varchar(200) NOT NULL,
+  'file_surat' text NOT NULL,
+  'status' enum('proses','selesai') NOT NULL DEFAULT 'proses'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `surat_masuk`
+-- Dumping data untuk tabel 'surat_masuk'
 --
 
-INSERT INTO `surat_masuk` (`id_surat`, `nomor_surat`, `tgl_kirim`, `tgl_terima`, `pengirim`, `penerima`, `perihal`, `file_surat`, `status`) VALUES
+INSERT INTO 'surat_masuk' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tgl_terima', 'pengirim', 'penerima', 'perihal', 'file_surat', 'status') VALUES
 (7, '007/MMS/IX-2018', '2018-09-24', '2018-09-24', 'PT.Merbabu Mandiri Indonesia', 'Sekretaris', 'Permohonan Perpanjangan SP2K', 'pt_merbabu.pdf', 'proses');
 
 --
@@ -273,149 +273,149 @@ INSERT INTO `surat_masuk` (`id_surat`, `nomor_surat`, `tgl_kirim`, `tgl_terima`,
 --
 
 --
--- Indeks untuk tabel `disposisi`
+-- Indeks untuk tabel 'disposisi'
 --
-ALTER TABLE `disposisi`
-  ADD PRIMARY KEY (`id_disposisi`),
-  ADD KEY `id_surat` (`id_surat`),
-  ADD KEY `id_pegawai_penerima` (`id_pegawai_penerima`);
+ALTER TABLE 'disposisi'
+  ADD PRIMARY KEY ('id_disposisi'),
+  ADD KEY 'id_surat' ('id_surat'),
+  ADD KEY 'id_pegawai_penerima' ('id_pegawai_penerima');
 
 --
--- Indeks untuk tabel `disposisi_memo`
+-- Indeks untuk tabel 'disposisi_memo'
 --
-ALTER TABLE `disposisi_memo`
-  ADD PRIMARY KEY (`id_disposisi`),
-  ADD KEY `id_pegawai_penerima` (`id_pegawai_penerima`),
-  ADD KEY `disposisi_memo_ibfk_1` (`id_memo`);
+ALTER TABLE 'disposisi_memo'
+  ADD PRIMARY KEY ('id_disposisi'),
+  ADD KEY 'id_pegawai_penerima' ('id_pegawai_penerima'),
+  ADD KEY 'disposisi_memo_ibfk_1' ('id_memo');
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indeks untuk tabel 'jabatan'
 --
-ALTER TABLE `jabatan`
-  ADD PRIMARY KEY (`id_jabatan`),
-  ADD KEY `id_jabatan` (`id_jabatan`);
+ALTER TABLE 'jabatan'
+  ADD PRIMARY KEY ('id_jabatan'),
+  ADD KEY 'id_jabatan' ('id_jabatan');
 
 --
--- Indeks untuk tabel `ket_disposisi`
+-- Indeks untuk tabel 'ket_disposisi'
 --
-ALTER TABLE `ket_disposisi`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE 'ket_disposisi'
+  ADD PRIMARY KEY ('id');
 
 --
--- Indeks untuk tabel `memo_keluar`
+-- Indeks untuk tabel 'memo_keluar'
 --
-ALTER TABLE `memo_keluar`
-  ADD PRIMARY KEY (`id_memo`),
-  ADD KEY `id_surat` (`id_memo`);
+ALTER TABLE 'memo_keluar'
+  ADD PRIMARY KEY ('id_memo'),
+  ADD KEY 'id_surat' ('id_memo');
 
 --
--- Indeks untuk tabel `memo_masuk`
+-- Indeks untuk tabel 'memo_masuk'
 --
-ALTER TABLE `memo_masuk`
-  ADD PRIMARY KEY (`id_memo`);
+ALTER TABLE 'memo_masuk'
+  ADD PRIMARY KEY ('id_memo');
 
 --
--- Indeks untuk tabel `pegawai`
+-- Indeks untuk tabel 'pegawai'
 --
-ALTER TABLE `pegawai`
-  ADD PRIMARY KEY (`id_pegawai`),
-  ADD KEY `id_pegawai` (`id_pegawai`),
-  ADD KEY `id_jabatan` (`id_jabatan`);
+ALTER TABLE 'pegawai'
+  ADD PRIMARY KEY ('id_pegawai'),
+  ADD KEY 'id_pegawai' ('id_pegawai'),
+  ADD KEY 'id_jabatan' ('id_jabatan');
 
 --
--- Indeks untuk tabel `surat_keluar`
+-- Indeks untuk tabel 'surat_keluar'
 --
-ALTER TABLE `surat_keluar`
-  ADD PRIMARY KEY (`id_surat`),
-  ADD KEY `id_surat` (`id_surat`);
+ALTER TABLE 'surat_keluar'
+  ADD PRIMARY KEY ('id_surat'),
+  ADD KEY 'id_surat' ('id_surat');
 
 --
--- Indeks untuk tabel `surat_masuk`
+-- Indeks untuk tabel 'surat_masuk'
 --
-ALTER TABLE `surat_masuk`
-  ADD PRIMARY KEY (`id_surat`);
+ALTER TABLE 'surat_masuk'
+  ADD PRIMARY KEY ('id_surat');
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT untuk tabel `disposisi`
+-- AUTO_INCREMENT untuk tabel 'disposisi'
 --
-ALTER TABLE `disposisi`
-  MODIFY `id_disposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+ALTER TABLE 'disposisi'
+  MODIFY 'id_disposisi' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT untuk tabel `disposisi_memo`
+-- AUTO_INCREMENT untuk tabel 'disposisi_memo'
 --
-ALTER TABLE `disposisi_memo`
-  MODIFY `id_disposisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+ALTER TABLE 'disposisi_memo'
+  MODIFY 'id_disposisi' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT untuk tabel 'jabatan'
 --
-ALTER TABLE `jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1808;
+ALTER TABLE 'jabatan'
+  MODIFY 'id_jabatan' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1808;
 
 --
--- AUTO_INCREMENT untuk tabel `ket_disposisi`
+-- AUTO_INCREMENT untuk tabel 'ket_disposisi'
 --
-ALTER TABLE `ket_disposisi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+ALTER TABLE 'ket_disposisi'
+  MODIFY 'id' int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `memo_keluar`
+-- AUTO_INCREMENT untuk tabel 'memo_keluar'
 --
-ALTER TABLE `memo_keluar`
-  MODIFY `id_memo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE 'memo_keluar'
+  MODIFY 'id_memo' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `memo_masuk`
+-- AUTO_INCREMENT untuk tabel 'memo_masuk'
 --
-ALTER TABLE `memo_masuk`
-  MODIFY `id_memo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE 'memo_masuk'
+  MODIFY 'id_memo' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `pegawai`
+-- AUTO_INCREMENT untuk tabel 'pegawai'
 --
-ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE 'pegawai'
+  MODIFY 'id_pegawai' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `surat_keluar`
+-- AUTO_INCREMENT untuk tabel 'surat_keluar'
 --
-ALTER TABLE `surat_keluar`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE 'surat_keluar'
+  MODIFY 'id_surat' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `surat_masuk`
+-- AUTO_INCREMENT untuk tabel 'surat_masuk'
 --
-ALTER TABLE `surat_masuk`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE 'surat_masuk'
+  MODIFY 'id_surat' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Ketidakleluasaan untuk tabel `disposisi`
+-- Ketidakleluasaan untuk tabel 'disposisi'
 --
-ALTER TABLE `disposisi`
-  ADD CONSTRAINT `disposisi_ibfk_1` FOREIGN KEY (`id_surat`) REFERENCES `surat_masuk` (`id_surat`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `disposisi_pegawai_id_pegawai_fk` FOREIGN KEY (`id_pegawai_penerima`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE 'disposisi'
+  ADD CONSTRAINT 'disposisi_ibfk_1' FOREIGN KEY ('id_surat') REFERENCES 'surat_masuk' ('id_surat') ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT 'disposisi_pegawai_id_pegawai_fk' FOREIGN KEY ('id_pegawai_penerima') REFERENCES 'pegawai' ('id_pegawai') ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `disposisi_memo`
+-- Ketidakleluasaan untuk tabel 'disposisi_memo'
 --
-ALTER TABLE `disposisi_memo`
-  ADD CONSTRAINT `disposisi_memo_ibfk_1` FOREIGN KEY (`id_memo`) REFERENCES `memo_masuk` (`id_memo`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `disposisi_memo_ibfk_2` FOREIGN KEY (`id_pegawai_penerima`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE 'disposisi_memo'
+  ADD CONSTRAINT 'disposisi_memo_ibfk_1' FOREIGN KEY ('id_memo') REFERENCES 'memo_masuk' ('id_memo') ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT 'disposisi_memo_ibfk_2' FOREIGN KEY ('id_pegawai_penerima') REFERENCES 'pegawai' ('id_pegawai') ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pegawai`
+-- Ketidakleluasaan untuk tabel 'pegawai'
 --
-ALTER TABLE `pegawai`
-  ADD CONSTRAINT `pegawai_jabatan_id_jabatan_fk` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE 'pegawai'
+  ADD CONSTRAINT 'pegawai_jabatan_id_jabatan_fk' FOREIGN KEY ('id_jabatan') REFERENCES 'jabatan' ('id_jabatan') ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
