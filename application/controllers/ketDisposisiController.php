@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR return('No direct script access allowed');
 
 
 class ketDisposisiController extends CI_Controller {
