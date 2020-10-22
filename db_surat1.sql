@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE disposisi (
-  'id_disposisi' int(11) NOT NULL,
-  'id_surat' int(11) NOT NULL,
-  'id_pegawai_pengirim' int(11) NOT NULL,
-  'id_pegawai_penerima' int(11) NOT NULL,
-  'id_jabatan_pengirim' int(11) NOT NULL,
-  'tgl_disposisi' timestamp NOT NULL DEFAULT current_timestamp(),
-  'keterangan' text NOT NULL,
-  'catatan' varchar(1000) NOT NULL,
-  'file_disposisi' text NOT NULL
+  id_disposisi int(11) NOT NULL,
+  id_surat int(11) NOT NULL,
+  id_pegawai_pengirim int(11) NOT NULL,
+  id_pegawai_penerima int(11) NOT NULL,
+  id_jabatan_pengirim int(11) NOT NULL,
+  tgl_disposisi timestamp NOT NULL DEFAULT current_timestamp(),
+  keterangan text NOT NULL,
+  catatan varchar(1000) NOT NULL,
+  file_disposisi text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
