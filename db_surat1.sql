@@ -38,7 +38,7 @@ CREATE TABLE disposisi(
   keterangan text NOT NULL,
   catatan varchar NOT NULL,
   file_disposisi text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 
 --
 -- Dumping data untuk tabel 'disposisi'
