@@ -343,7 +343,7 @@ ALTER TABLE surat_masuk
 -- AUTO_INCREMENT untuk tabel 'disposisi'
 --
 ALTER TABLE disposisi
-  ALTER COLUMN id_disposisi int AUTO_INCREMENT;
+  ALTER COLUMN id_disposisi int;
 
 --
 -- AUTO_INCREMENT untuk tabel 'disposisi_memo'
