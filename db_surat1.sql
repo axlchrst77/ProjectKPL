@@ -66,7 +66,7 @@ CREATE TABLE disposisi_memo (
   keterangan text NOT NULL,
   catatan varchar NOT NULL,
   file_disposisi text NOT NULL
-) 
+);
 
 --
 -- Dumping data untuk tabel 'disposisi_memo'
