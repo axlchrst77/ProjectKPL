@@ -14,14 +14,14 @@ function Message($txt, $severity='')
 	if(PHP_SAPI=='cli')
 	{
 		if($severity)
-			echo "$severity: ";
-		echo "$txt\n";
+			return "$severity: ";
+		return "$txt\n";
 	}
-	else
+	return
 	{
 		if($severity)
-			echo "<b>$severity</b>: ";
-		echo "$txt<br>";
+			return "<b>$severity</b>: ";
+		return "$txt<br>";
 	}
 }
 
