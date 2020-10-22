@@ -1246,7 +1246,7 @@ protected function _parsejpg($file)
 	else
 		$colspace = 'DeviceGray';
 	$bpc = isset($a['bits']) ? $a['bits'] : 8;
-	$data = file_get_contents($file);
+	$data = @file_get_contents($file);
 	return array('w'=>$a[0], 'h'=>$a[1], 'cs'=>$colspace, 'bpc'=>$bpc, 'f'=>'DCTDecode', 'data'=>$data);
 }
 
