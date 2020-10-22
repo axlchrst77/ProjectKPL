@@ -44,7 +44,7 @@ CREATE TABLE disposisi(
 -- Dumping data untuk tabel 'disposisi'
 --
 
-INSERT INTO 'disposisi' ('id_disposisi', 'id_surat', 'id_pegawai_pengirim', 'id_pegawai_penerima', 'id_jabatan_pengirim', 'tgl_disposisi', 'keterangan', 'catatan', 'file_disposisi') VALUES
+INSERT INTO disposisi (id_disposisi, id_surat, id_pegawai_pengirim, id_pegawai_penerima, id_jabatan_pengirim, tgl_disposisi, keterangan, catatan, file_disposisi) VALUES
 (45, 7, 2, 1, 9, '2020-02-12 04:19:52', 'Sekretaris', 'wq', ''),
 (46, 7, 2, 4, 9, '2020-02-12 04:20:08', 'Forward Ke', 's', ''),
 (47, 7, 2, 7, 9, '2020-02-12 04:20:36', 'Seluruh Pegawai', 'a', ''),
