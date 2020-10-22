@@ -29,7 +29,7 @@ class ketDisposisiController extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_ketdisposisi_by_id = $this->M_ketdisposisi->get_ketdisposisi_by_id($id);
-                echo json_encode($data_ketdisposisi_by_id);
+                return json_encode($data_ketdisposisi_by_id);
             } else {
                 redirect('logout');
             }
