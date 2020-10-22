@@ -86,13 +86,13 @@ CREATE TABLE jabatan (
   id_jabatan int NOT NULL,
   nama_jabatan varchar NOT NULL,
   level int NOT NULL
-) 
+);
 
 --
 -- Dumping data untuk tabel 'jabatan'
 --
 
-INSERT INTO 'jabatan' ('id_jabatan', 'nama_jabatan', 'level') VALUES
+INSERT INTO jabatan (id_jabatan, nama_jabatan, level) VALUES
 (9, 'Sekretaris', 1),
 (1000, ' Branch Manager', 2),
 (1100, 'Deputy Branch Manager', 2),
@@ -120,13 +120,13 @@ INSERT INTO 'jabatan' ('id_jabatan', 'nama_jabatan', 'level') VALUES
 CREATE TABLE ket_disposisi (
   id int NOT NULL,
   nama varchar DEFAULT NULL
-) 
+);
 
 --
 -- Dumping data untuk tabel 'ket_disposisi'
 --
 
-INSERT INTO 'ket_disposisi' ('id', 'nama') VALUES
+INSERT INTO ket_disposisi (id, nama) VALUES
 (1, 'Teliti'),
 (2, 'Edarkan'),
 (4, 'Ajukan Pendapat'),
@@ -159,13 +159,13 @@ CREATE TABLE memo_keluar (
   tujuan varchar NOT NULL,
   perihal varchar NOT NULL,
   file_memo text NOT NULL
-) 
+);
 
 --
 -- Dumping data untuk tabel 'memo_keluar'
 --
 
-INSERT INTO 'memo_keluar' ('id_memo', 'nomor_memo', 'tgl_kirim', 'tujuan', 'perihal', 'file_memo') VALUES
+INSERT INTO memo_keluar (id_memo, nomor_memo, tgl_kirim, tujuan, perihal, file_memo) VALUES
 (9, '1119/M/Mgl.III/BCFU/XI/2019', '2019-11-28', 'BTN Kantor Wilayah 6', 'Permohonan Ijin Prinsip Spesial Rate Deposito', '1119_permohonan_ijin_prinsip_Spesial_Rate_Deposito.pdf');
 
 -- --------------------------------------------------------
@@ -184,13 +184,13 @@ CREATE TABLE memo_masuk (
   perihal varchar NOT NULL,
   file_memo text NOT NULL,
   status enum('proses','selesai') NOT NULL DEFAULT 'proses'
-)
+);
 
 --
 -- Dumping data untuk tabel 'memo_masuk'
 --
 
-INSERT INTO 'memo_masuk' ('id_memo', 'nomor_memo', 'tgl_kirim', 'tgl_terima', 'pengirim', 'penerima', 'perihal', 'file_memo', 'status') VALUES
+INSERT INTO memo_masuk (id_memo, nomor_memo, tgl_kirim, tgl_terima, pengirim, penerima, perihal, file_memo, status) VALUES
 (10, '10/M/OBSD/CC/II/2020', '2020-02-05', '2020-02-05', 'OBSD', 'Sekretaris', 'Pemberitahuan', '20200206_OBSD_10_M_OBSD_CC_II_2020_--_Monitoring_GL_Kas_Dalam_Perjalanan_ATM_Vendor_Januari_202021.pdf', 'proses');
 
 -- --------------------------------------------------------
@@ -206,13 +206,13 @@ CREATE TABLE pegawai (
   id_jabatan int NOT NULL,
   password text NOT NULL,
   username varchar NOT NULL
-)
+);
 
 --
 -- Dumping data untuk tabel 'pegawai'
 --
 
-INSERT INTO 'pegawai' ('id_pegawai', 'nik', 'nama_pegawai', 'id_jabatan', 'password', 'username') VALUES
+INSERT INTO pegawai (id_pegawai, nik, nama_pegawai, id_jabatan, password, username) VALUES
 (1, 111, 'Kepala Cabang', 1000, '21232f297a57a5a743894a0e4a801fc3', 'kepalacabang'),
 (2, 999, 'Sekretaris', 9, '21232f297a57a5a743894a0e4a801fc3', 'sekretaris'),
 (4, 0, 'Bima', 1110, '21232f297a57a5a743894a0e4a801fc3', 'bima'),
@@ -234,13 +234,13 @@ CREATE TABLE surat_keluar (
   tujuan varchar NOT NULL,
   perihal varchar NOT NULL,
   file_surat text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dumping data untuk tabel 'surat_keluar'
 --
 
-INSERT INTO 'surat_keluar' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tujuan', 'perihal', 'file_surat') VALUES
+INSERT INTO surat_keluar (id_surat, nomor_surat, tgl_kirim, tujuan, perihal, file_surat) VALUES
 (8, '64/S/Mgl.III/CMFU/XI2019', '2019-11-13', 'KSP Bakti Usaha Sejahtera', 'Penawaran Program Gebyar Giro BTN 2019', '64_penawaran_program_gebyar_giro_BTN_2019.pdf');
 
 -- --------------------------------------------------------
@@ -259,13 +259,13 @@ CREATE TABLE surat_masuk (
   perihal varchar NOT NULL,
   file_surat text NOT NULL,
   status enum('proses','selesai') NOT NULL DEFAULT 'proses'
-)
+);
 
 --
 -- Dumping data untuk tabel 'surat_masuk'
 --
 
-INSERT INTO 'surat_masuk' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tgl_terima', 'pengirim', 'penerima', 'perihal', 'file_surat', 'status') VALUES
+INSERT INTO surat_masuk (id_surat, nomor_surat, tgl_kirim, tgl_terima, pengirim, penerima, perihal, file_surat, status) VALUES
 (7, '007/MMS/IX-2018', '2018-09-24', '2018-09-24', 'PT.Merbabu Mandiri Indonesia', 'Sekretaris', 'Permohonan Perpanjangan SP2K', 'pt_merbabu.pdf', 'proses');
 
 --
