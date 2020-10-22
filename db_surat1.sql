@@ -276,9 +276,9 @@ INSERT INTO 'surat_masuk' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tgl_terima',
 -- Indeks untuk tabel 'disposisi'
 --
 ALTER TABLE disposisi
-  ADD PRIMARY KEY ('id_disposisi'),
-  ADD KEY 'id_surat' ('id_surat'),
-  ADD KEY 'id_pegawai_penerima' ('id_pegawai_penerima');
+  ADD PRIMARY KEY (id_disposisi),
+  ADD KEY 'id_surat' (id_surat),
+  ADD KEY 'id_pegawai_penerima' (id_pegawai_penerima);
 
 --
 -- Indeks untuk tabel 'disposisi_memo'
