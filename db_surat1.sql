@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Struktur dari tabel 'disposisi'
 --
 
-CREATE TABLE disposisi (
+CREATE TABLE disposisi(
   id_disposisi int(11) NOT NULL,
   id_surat int(11) NOT NULL,
   id_pegawai_pengirim int(11) NOT NULL,
