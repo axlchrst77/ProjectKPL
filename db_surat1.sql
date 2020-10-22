@@ -407,15 +407,15 @@ ALTER TABLE disposisi
 --
 -- Ketidakleluasaan untuk tabel 'disposisi_memo'
 --
-ALTER TABLE 'disposisi_memo'
-  ADD CONSTRAINT 'disposisi_memo_ibfk_1' FOREIGN KEY ('id_memo') REFERENCES 'memo_masuk' ('id_memo') ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT 'disposisi_memo_ibfk_2' FOREIGN KEY ('id_pegawai_penerima') REFERENCES 'pegawai' ('id_pegawai') ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE disposisi_memo
+  ADD CONSTRAINT disposisi_memo_ibfk_1 FOREIGN KEY (id_memo) REFERENCES memo_masuk (id_memo) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT disposisi_memo_ibfk_2 FOREIGN KEY (id_pegawai_penerima) REFERENCES pegawai (id_pegawai) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel 'pegawai'
 --
-ALTER TABLE 'pegawai'
-  ADD CONSTRAINT 'pegawai_jabatan_id_jabatan_fk' FOREIGN KEY ('id_jabatan') REFERENCES 'jabatan' ('id_jabatan') ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE pegawai
+  ADD CONSTRAINT pegawai_jabatan_id_jabatan_fk FOREIGN KEY (id_jabatan) REFERENCES jabatan (id_jabatan) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
