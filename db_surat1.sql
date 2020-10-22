@@ -343,7 +343,7 @@ ALTER TABLE surat_masuk
 -- AUTO_INCREMENT untuk tabel 'disposisi'
 --
 ALTER TABLE disposisi
-  MODIFY 'id_disposisi' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY id_disposisi int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel 'disposisi_memo'
