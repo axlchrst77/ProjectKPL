@@ -153,7 +153,7 @@ INSERT INTO 'ket_disposisi' ('id', 'nama') VALUES
 --
 
 CREATE TABLE memo_keluar (
-  id_memo int(11) NOT NULL,
+  id_memo int NOT NULL,
   nomor_memo varchar NOT NULL,
   tgl_kirim date NOT NULL,
   tujuan varchar NOT NULL,
