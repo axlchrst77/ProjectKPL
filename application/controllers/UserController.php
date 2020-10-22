@@ -105,7 +105,7 @@ class UserController extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_user_by_id = $this->M_pegawai->get_pegawai_by_id($id_user);
-                echo json_encode($data_user_by_id);
+                return json_encode($data_user_by_id);
             } else {
                 redirect('logout');
             }
@@ -117,7 +117,7 @@ class UserController extends CI_Controller {
 	    public function get_pegawai_by_unit($id_unit) {
         if ($this->session->userdata('logged_in') == true) {
             $data_pegawai_by_id_unit = $this->M_pegawai->get_pegawai_by_unit($id_unit);
-            echo json_encode($data_pegawai_by_id_unit);
+            return json_encode($data_pegawai_by_id_unit);
         } else {
             redirect('login');
         }
