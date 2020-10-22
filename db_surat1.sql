@@ -401,8 +401,8 @@ ALTER TABLE surat_masuk
 -- Ketidakleluasaan untuk tabel 'disposisi'
 --
 ALTER TABLE disposisi
-  ADD CONSTRAINT 'disposisi_ibfk_1' FOREIGN KEY ('id_surat') REFERENCES 'surat_masuk' ('id_surat') ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT 'disposisi_pegawai_id_pegawai_fk' FOREIGN KEY ('id_pegawai_penerima') REFERENCES 'pegawai' ('id_pegawai') ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT disposisi_ibfk_1 FOREIGN KEY (id_surat) REFERENCES surat_masuk (id_surat) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT disposisi_pegawai_id_pegawai_fk FOREIGN KEY (id_pegawai_penerima) REFERENCES pegawai (id_pegawai) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel 'disposisi_memo'
