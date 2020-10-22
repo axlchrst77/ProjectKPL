@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE disposisi(
-  id_disposisi int(11) NOT NULL,
+  id_disposisi int NOT NULL,
   id_surat int(11) NOT NULL,
   id_pegawai_pengirim int(11) NOT NULL,
   id_pegawai_penerima int(11) NOT NULL,
