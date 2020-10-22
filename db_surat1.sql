@@ -34,7 +34,7 @@ CREATE TABLE disposisi(
   id_pegawai_pengirim int NOT NULL,
   id_pegawai_penerima int NOT NULL,
   id_jabatan_pengirim int NOT NULL,
-  tgl_disposisi timestamp NOT NULL DEFAULT current_timestamp(),
+  tgl_disposisi timestamp NOT NULL DEFAULT current_timestamp,
   keterangan text NOT NULL,
   catatan varchar NOT NULL,
   file_disposisi text NOT NULL
