@@ -38,7 +38,7 @@ CREATE TABLE disposisi(
   keterangan text NOT NULL,
   catatan varchar NOT NULL,
   file_disposisi text NOT NULL
-)
+);
 
 --
 -- Dumping data untuk tabel 'disposisi'
