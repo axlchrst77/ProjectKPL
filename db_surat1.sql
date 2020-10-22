@@ -284,56 +284,56 @@ ALTER TABLE disposisi
 -- Indeks untuk tabel 'disposisi_memo'
 --
 ALTER TABLE disposisi_memo
-  ADD PRIMARY KEY ('id_disposisi'),
-  ADD KEY 'id_pegawai_penerima' ('id_pegawai_penerima'),
-  ADD KEY 'disposisi_memo_ibfk_1' ('id_memo');
+  ADD PRIMARY KEY (id_disposisi),
+  ADD KEY id_pegawai_penerima (id_pegawai_penerima),
+  ADD KEY disposisi_memo_ibfk_1 (id_memo);
 
 --
 -- Indeks untuk tabel 'jabatan'
 --
 ALTER TABLE jabatan
-  ADD PRIMARY KEY ('id_jabatan'),
-  ADD KEY 'id_jabatan' ('id_jabatan');
+  ADD PRIMARY KEY (id_jabatan),
+  ADD KEY id_jabatan (id_jabatan);
 
 --
 -- Indeks untuk tabel 'ket_disposisi'
 --
 ALTER TABLE ket_disposisi
-  ADD PRIMARY KEY ('id');
+  ADD PRIMARY KEY (id);
 
 --
 -- Indeks untuk tabel 'memo_keluar'
 --
 ALTER TABLE memo_keluar
-  ADD PRIMARY KEY ('id_memo'),
-  ADD KEY 'id_surat' ('id_memo');
+  ADD PRIMARY KEY (id_memo),
+  ADD KEY id_surat (id_memo);
 
 --
 -- Indeks untuk tabel 'memo_masuk'
 --
 ALTER TABLE memo_masuk
-  ADD PRIMARY KEY ('id_memo');
+  ADD PRIMARY KEY (id_memo);
 
 --
 -- Indeks untuk tabel 'pegawai'
 --
 ALTER TABLE pegawai
-  ADD PRIMARY KEY ('id_pegawai'),
-  ADD KEY 'id_pegawai' ('id_pegawai'),
-  ADD KEY 'id_jabatan' ('id_jabatan');
+  ADD PRIMARY KEY (id_pegawai),
+  ADD KEY id_pegawai (id_pegawai),
+  ADD KEY id_jabatan (id_jabatan);
 
 --
 -- Indeks untuk tabel 'surat_keluar'
 --
 ALTER TABLE surat_keluar
-  ADD PRIMARY KEY ('id_surat'),
-  ADD KEY 'id_surat' ('id_surat');
+  ADD PRIMARY KEY (id_surat),
+  ADD KEY id_surat (id_surat);
 
 --
 -- Indeks untuk tabel 'surat_masuk'
 --
 ALTER TABLE surat_masuk
-  ADD PRIMARY KEY ('id_surat');
+  ADD PRIMARY KEY (id_surat);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -348,50 +348,50 @@ ALTER TABLE 'disposisi'
 --
 -- AUTO_INCREMENT untuk tabel 'disposisi_memo'
 --
-ALTER TABLE 'disposisi_memo'
-  MODIFY 'id_disposisi' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+ALTER TABLE disposisi_memo
+  MODIFY id_disposisi int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel 'jabatan'
 --
-ALTER TABLE 'jabatan'
-  MODIFY 'id_jabatan' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1808;
+ALTER TABLE jabatan
+  MODIFY id_jabatan int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1808;
 
 --
 -- AUTO_INCREMENT untuk tabel 'ket_disposisi'
 --
-ALTER TABLE 'ket_disposisi'
-  MODIFY 'id' int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+ALTER TABLE ket_disposisi
+  MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel 'memo_keluar'
 --
-ALTER TABLE 'memo_keluar'
-  MODIFY 'id_memo' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE memo_keluar
+  MODIFY id_memo int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel 'memo_masuk'
 --
-ALTER TABLE 'memo_masuk'
-  MODIFY 'id_memo' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE memo_masuk
+  MODIFY id_memo int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel 'pegawai'
 --
-ALTER TABLE 'pegawai'
-  MODIFY 'id_pegawai' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE pegawai
+  MODIFY id_pegawai int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel 'surat_keluar'
 --
-ALTER TABLE 'surat_keluar'
-  MODIFY 'id_surat' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE surat_keluar
+  MODIFY id_surat int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel 'surat_masuk'
 --
-ALTER TABLE 'surat_masuk'
-  MODIFY 'id_surat' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE surat_masuk
+  MODIFY id_surat int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -400,7 +400,7 @@ ALTER TABLE 'surat_masuk'
 --
 -- Ketidakleluasaan untuk tabel 'disposisi'
 --
-ALTER TABLE 'disposisi'
+ALTER TABLE disposisi
   ADD CONSTRAINT 'disposisi_ibfk_1' FOREIGN KEY ('id_surat') REFERENCES 'surat_masuk' ('id_surat') ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT 'disposisi_pegawai_id_pegawai_fk' FOREIGN KEY ('id_pegawai_penerima') REFERENCES 'pegawai' ('id_pegawai') ON DELETE CASCADE ON UPDATE CASCADE;
 
