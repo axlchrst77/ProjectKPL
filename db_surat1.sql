@@ -72,7 +72,7 @@ CREATE TABLE disposisi_memo (
 -- Dumping data untuk tabel 'disposisi_memo'
 --
 
-INSERT INTO 'disposisi_memo' ('id_disposisi', 'id_memo', 'id_pegawai_pengirim', 'id_pegawai_penerima', 'id_jabatan_pengirim', 'tgl_disposisi', 'keterangan', 'catatan', 'file_disposisi') VALUES
+INSERT INTO disposisi_memo (id_disposisi, id_memo, id_pegawai_pengirim, id_pegawai_penerima, id_jabatan_pengirim, tgl_disposisi, keterangan, catatan, file_disposisi) VALUES
 (16, 10, 2, 1, 9, '2020-02-12 04:24:24', 'Edarkan', 'sad', ''),
 (17, 10, 1, 7, 1000, '2020-02-12 04:26:51', 'U/ Dilaksanakan', 'sad', '');
 
