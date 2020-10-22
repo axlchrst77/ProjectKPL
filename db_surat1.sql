@@ -56,17 +56,17 @@ INSERT INTO 'disposisi' ('id_disposisi', 'id_surat', 'id_pegawai_pengirim', 'id_
 -- Struktur dari tabel 'disposisi_memo'
 --
 
-CREATE TABLE 'disposisi_memo' (
-  'id_disposisi' int(11) NOT NULL,
-  'id_memo' int(11) NOT NULL,
-  'id_pegawai_pengirim' int(11) NOT NULL,
-  'id_pegawai_penerima' int(11) NOT NULL,
-  'id_jabatan_pengirim' int(11) NOT NULL,
-  'tgl_disposisi' timestamp NOT NULL DEFAULT current_timestamp(),
-  'keterangan' text NOT NULL,
-  'catatan' varchar(1000) NOT NULL,
-  'file_disposisi' text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+CREATE TABLE disposisi_memo (
+  id_disposisi int NOT NULL,
+  id_memo int NOT NULL,
+  id_pegawai_pengirim int NOT NULL,
+  id_pegawai_penerima int NOT NULL,
+  id_jabatan_pengirim int NOT NULL,
+  tgl_disposisi timestamp NOT NULL DEFAULT current_timestamp,
+  keterangan text NOT NULL,
+  catatan varchar NOT NULL,
+  file_disposisi text NOT NULL
+) 
 
 --
 -- Dumping data untuk tabel 'disposisi_memo'
@@ -82,11 +82,11 @@ INSERT INTO 'disposisi_memo' ('id_disposisi', 'id_memo', 'id_pegawai_pengirim', 
 -- Struktur dari tabel 'jabatan'
 --
 
-CREATE TABLE 'jabatan' (
-  'id_jabatan' int(11) NOT NULL,
-  'nama_jabatan' varchar(100) NOT NULL,
-  'level' int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE jabatan (
+  id_jabatan int NOT NULL,
+  nama_jabatan varchar NOT NULL,
+  level int NOT NULL
+) 
 
 --
 -- Dumping data untuk tabel 'jabatan'
@@ -117,10 +117,10 @@ INSERT INTO 'jabatan' ('id_jabatan', 'nama_jabatan', 'level') VALUES
 -- Struktur dari tabel 'ket_disposisi'
 --
 
-CREATE TABLE 'ket_disposisi' (
-  'id' int(10) NOT NULL,
-  'nama' varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE ket_disposisi (
+  id int NOT NULL,
+  nama varchar DEFAULT NULL
+) 
 
 --
 -- Dumping data untuk tabel 'ket_disposisi'
@@ -152,14 +152,14 @@ INSERT INTO 'ket_disposisi' ('id', 'nama') VALUES
 -- Struktur dari tabel 'memo_keluar'
 --
 
-CREATE TABLE 'memo_keluar' (
-  'id_memo' int(11) NOT NULL,
-  'nomor_memo' varchar(200) NOT NULL,
-  'tgl_kirim' date NOT NULL,
-  'tujuan' varchar(200) NOT NULL,
-  'perihal' varchar(200) NOT NULL,
-  'file_memo' text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE memo_keluar (
+  id_memo int(11) NOT NULL,
+  nomor_memo varchar NOT NULL,
+  tgl_kirim date NOT NULL,
+  tujuan varchar NOT NULL,
+  perihal varchar NOT NULL,
+  file_memo text NOT NULL
+) 
 
 --
 -- Dumping data untuk tabel 'memo_keluar'
@@ -174,17 +174,17 @@ INSERT INTO 'memo_keluar' ('id_memo', 'nomor_memo', 'tgl_kirim', 'tujuan', 'peri
 -- Struktur dari tabel 'memo_masuk'
 --
 
-CREATE TABLE 'memo_masuk' (
-  'id_memo' int(11) NOT NULL,
-  'nomor_memo' varchar(200) NOT NULL,
-  'tgl_kirim' date NOT NULL,
-  'tgl_terima' date NOT NULL,
-  'pengirim' varchar(200) NOT NULL,
-  'penerima' varchar(200) NOT NULL,
-  'perihal' varchar(200) NOT NULL,
-  'file_memo' text NOT NULL,
-  'status' enum('proses','selesai') NOT NULL DEFAULT 'proses'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE memo_masuk (
+  id_memo int NOT NULL,
+  nomor_memo varchar NOT NULL,
+  tgl_kirim date NOT NULL,
+  tgl_terima date NOT NULL,
+  pengirim varchar NOT NULL,
+  penerima varchar NOT NULL,
+  perihal varchar NOT NULL,
+  file_memo text NOT NULL,
+  status enum('proses','selesai') NOT NULL DEFAULT 'proses'
+)
 
 --
 -- Dumping data untuk tabel 'memo_masuk'
@@ -199,14 +199,14 @@ INSERT INTO 'memo_masuk' ('id_memo', 'nomor_memo', 'tgl_kirim', 'tgl_terima', 'p
 -- Struktur dari tabel 'pegawai'
 --
 
-CREATE TABLE 'pegawai' (
-  'id_pegawai' int(11) NOT NULL,
-  'nik' int(11) NOT NULL,
-  'nama_pegawai' varchar(200) NOT NULL,
-  'id_jabatan' int(11) NOT NULL,
-  'password' text NOT NULL,
-  'username' varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE pegawai (
+  id_pegawai int NOT NULL,
+  nik int NOT NULL,
+  nama_pegawai varchar NOT NULL,
+  id_jabatan int NOT NULL,
+  password text NOT NULL,
+  username varchar NOT NULL
+)
 
 --
 -- Dumping data untuk tabel 'pegawai'
@@ -227,13 +227,13 @@ INSERT INTO 'pegawai' ('id_pegawai', 'nik', 'nama_pegawai', 'id_jabatan', 'passw
 -- Struktur dari tabel 'surat_keluar'
 --
 
-CREATE TABLE 'surat_keluar' (
-  'id_surat' int(11) NOT NULL,
-  'nomor_surat' varchar(200) NOT NULL,
-  'tgl_kirim' date NOT NULL,
-  'tujuan' varchar(200) NOT NULL,
-  'perihal' varchar(200) NOT NULL,
-  'file_surat' text NOT NULL
+CREATE TABLE surat_keluar (
+  id_surat int NOT NULL,
+  nomor_surat varchar NOT NULL,
+  tgl_kirim date NOT NULL,
+  tujuan varchar NOT NULL,
+  perihal varchar NOT NULL,
+  file_surat text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -249,17 +249,17 @@ INSERT INTO 'surat_keluar' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tujuan', 'p
 -- Struktur dari tabel 'surat_masuk'
 --
 
-CREATE TABLE 'surat_masuk' (
-  'id_surat' int(11) NOT NULL,
-  'nomor_surat' varchar(200) NOT NULL,
-  'tgl_kirim' date NOT NULL,
-  'tgl_terima' date NOT NULL,
-  'pengirim' varchar(200) NOT NULL,
-  'penerima' varchar(200) NOT NULL,
-  'perihal' varchar(200) NOT NULL,
-  'file_surat' text NOT NULL,
-  'status' enum('proses','selesai') NOT NULL DEFAULT 'proses'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE surat_masuk (
+  id_surat int NOT NULL,
+  nomor_surat varchar NOT NULL,
+  tgl_kirim date NOT NULL,
+  tgl_terima date NOT NULL,
+  pengirim varchar NOT NULL,
+  penerima varchar NOT NULL,
+  perihal varchar NOT NULL,
+  file_surat text NOT NULL,
+  status enum('proses','selesai') NOT NULL DEFAULT 'proses'
+)
 
 --
 -- Dumping data untuk tabel 'surat_masuk'
@@ -275,7 +275,7 @@ INSERT INTO 'surat_masuk' ('id_surat', 'nomor_surat', 'tgl_kirim', 'tgl_terima',
 --
 -- Indeks untuk tabel 'disposisi'
 --
-ALTER TABLE 'disposisi'
+ALTER TABLE disposisi
   ADD PRIMARY KEY ('id_disposisi'),
   ADD KEY 'id_surat' ('id_surat'),
   ADD KEY 'id_pegawai_penerima' ('id_pegawai_penerima');
@@ -283,7 +283,7 @@ ALTER TABLE 'disposisi'
 --
 -- Indeks untuk tabel 'disposisi_memo'
 --
-ALTER TABLE 'disposisi_memo'
+ALTER TABLE disposisi_memo
   ADD PRIMARY KEY ('id_disposisi'),
   ADD KEY 'id_pegawai_penerima' ('id_pegawai_penerima'),
   ADD KEY 'disposisi_memo_ibfk_1' ('id_memo');
@@ -291,33 +291,33 @@ ALTER TABLE 'disposisi_memo'
 --
 -- Indeks untuk tabel 'jabatan'
 --
-ALTER TABLE 'jabatan'
+ALTER TABLE jabatan
   ADD PRIMARY KEY ('id_jabatan'),
   ADD KEY 'id_jabatan' ('id_jabatan');
 
 --
 -- Indeks untuk tabel 'ket_disposisi'
 --
-ALTER TABLE 'ket_disposisi'
+ALTER TABLE ket_disposisi
   ADD PRIMARY KEY ('id');
 
 --
 -- Indeks untuk tabel 'memo_keluar'
 --
-ALTER TABLE 'memo_keluar'
+ALTER TABLE memo_keluar
   ADD PRIMARY KEY ('id_memo'),
   ADD KEY 'id_surat' ('id_memo');
 
 --
 -- Indeks untuk tabel 'memo_masuk'
 --
-ALTER TABLE 'memo_masuk'
+ALTER TABLE memo_masuk
   ADD PRIMARY KEY ('id_memo');
 
 --
 -- Indeks untuk tabel 'pegawai'
 --
-ALTER TABLE 'pegawai'
+ALTER TABLE pegawai
   ADD PRIMARY KEY ('id_pegawai'),
   ADD KEY 'id_pegawai' ('id_pegawai'),
   ADD KEY 'id_jabatan' ('id_jabatan');
@@ -325,14 +325,14 @@ ALTER TABLE 'pegawai'
 --
 -- Indeks untuk tabel 'surat_keluar'
 --
-ALTER TABLE 'surat_keluar'
+ALTER TABLE surat_keluar
   ADD PRIMARY KEY ('id_surat'),
   ADD KEY 'id_surat' ('id_surat');
 
 --
 -- Indeks untuk tabel 'surat_masuk'
 --
-ALTER TABLE 'surat_masuk'
+ALTER TABLE surat_masuk
   ADD PRIMARY KEY ('id_surat');
 
 --
