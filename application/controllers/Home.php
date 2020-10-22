@@ -275,7 +275,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_surat_masuk_by_id = $this->M_surat->get_surat_masuk_by_id($id_surat);
-                echo json_encode($data_surat_masuk_by_id);
+                return json_encode($data_surat_masuk_by_id);
             } else {
                 redirect('logout');
             }
@@ -288,7 +288,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_surat_keluar_by_id = $this->M_surat->get_surat_keluar_by_id($id_surat);
-                echo json_encode($data_surat_keluar_by_id);
+                return json_encode($data_surat_keluar_by_id);
             } else {
                 redirect('logout');
             }
@@ -583,7 +583,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_memo_masuk_by_id = $this->M_memo->get_memo_masuk_by_id($id_memo);
-                echo json_encode($data_memo_masuk_by_id);
+                return json_encode($data_memo_masuk_by_id);
             } else {
                 redirect('logout');
             }
@@ -596,7 +596,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_memo_keluar_by_id = $this->M_memo->get_memo_keluar_by_id($id_memo);
-                echo json_encode($data_memo_keluar_by_id);
+                return json_encode($data_memo_keluar_by_id);
             } else {
                 redirect('logout');
             }
@@ -743,7 +743,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_unit_by_id = $this->M_unit->get_unit_by_id($id_unit);
-                echo json_encode($data_unit_by_id);
+                return json_encode($data_unit_by_id);
             } else {
                 redirect('logout');
             }
@@ -847,7 +847,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_user_by_id = $this->M_pegawai->get_pegawai_by_id($id_user);
-                echo json_encode($data_user_by_id);
+                return json_encode($data_user_by_id);
             } else {
                 redirect('logout');
             }
@@ -859,7 +859,7 @@ class Home extends CI_Controller {
 	public function get_pegawai_by_unit($id_unit) {
         if ($this->session->userdata('logged_in') == true) {
             $data_pegawai_by_id_unit = $this->M_pegawai->get_pegawai_by_unit($id_unit);
-            echo json_encode($data_pegawai_by_id_unit);
+            return json_encode($data_pegawai_by_id_unit);
         } else {
             redirect('login');
         }
@@ -884,7 +884,7 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_ketdisposisi_by_id = $this->M_ketdisposisi->get_ketdisposisi_by_id($id);
-                echo json_encode($data_ketdisposisi_by_id);
+                return json_encode($data_ketdisposisi_by_id);
             } else {
                 redirect('logout');
             }
