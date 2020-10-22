@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR return('No direct script access allowed');
 
 return "\nDatabase error: ",
 $heading,
