@@ -247,7 +247,7 @@ class SuratController extends CI_Controller {
         if ($this->session->userdata('logged_in') == true) {
             if ($this->session->userdata('level') == '1') {
                 $data_surat_masuk_by_id = $this->M_surat->get_surat_masuk_by_id($id_surat);
-                echo json_encode($data_surat_masuk_by_id);
+                return json_encode($data_surat_masuk_by_id);
             } else {
                 redirect('logout');
             }
